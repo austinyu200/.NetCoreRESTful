@@ -7,9 +7,9 @@ using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MusicArchive.Utilities
+namespace MusicArchive.DbContext
 {
-    public class PieciesDbContext : DbContext
+    public class PieciesDbContext : Microsoft.EntityFrameworkCore.DbContext
     {
         public PieciesDbContext(DbContextOptions<PieciesDbContext> options) : base(options)
         { }
@@ -17,5 +17,6 @@ namespace MusicArchive.Utilities
         public DbSet<Composer> Composer { get; set; }
 
         public DbSet<Piece> Piece { get; set; }
+
     }
 }

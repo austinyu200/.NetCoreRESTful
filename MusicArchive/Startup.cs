@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using MusicArchive.Utilities;
+using MusicArchive.DbContext;
 using Microsoft.EntityFrameworkCore;
 
 namespace MusicArchive
@@ -29,6 +29,7 @@ namespace MusicArchive
         {
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<PieciesDbContext>(opt => opt.UseSqlServer(connectionString));
+
             services.AddControllers();
         }
 
